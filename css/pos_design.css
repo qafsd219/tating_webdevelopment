@@ -1,0 +1,57 @@
+body {
+    background-image: url('../uploads/background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+}
+#sidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: 20px;
+    background-color: #4c4c4c;
+}
+.collapsible-tab {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+}
+.icon {
+    float: left;
+    margin-right: 10px;
+}
+.options-column {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ccc;
+    overflow-y: scroll;
+    z-index: 1;
+}
+.options-list {
+    list-style-type: square;
+    padding: 0;
+    margin: 0;
+}
+.options-list-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.options-list-item:hover {
+    background-color: #ddd;
+}
+button {
+    padding-top: 10px;
+}

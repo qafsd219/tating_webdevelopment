@@ -1,0 +1,117 @@
+/* css/payroll.css */
+body {
+    font-family: Consolas;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-content: center;
+    margin: 0 auto;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+/* columns */
+.left-column,
+.right-column {
+    width: 50%;
+    padding: 20px;
+}
+.left-column {
+    background-color: #f9f9f9;
+    text-align: left;
+}
+.right-column {
+    background-color: #f9f9f9;
+    text-align: left;
+}
+/* text box */
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+input[type="text"]:read-only {
+    background-color: #dcdcdc;
+}
+.column input[type="text"] {
+    width: 100%;
+}
+/* buttons */
+.search-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.search-btn:hover{
+    background-color: #910000;
+}
+.blue-btn {
+    background-color: #007dfa;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.blue-btn:hover{
+    background-color: #005cb8;
+}
+.green-btn {
+    background-color: #00d0bc;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.green-btn:hover{
+    background-color: #00af9e;
+}
+.new-btn {
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.new-btn:hover{
+    background-color: #cea500;
+}
+/* picture */
+.pic{
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(0, 0, 0);
+    overflow: hidden;
+    box-shadow: 0 0 5px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+/* label */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+h1{
+    font-family: sans-serif;
+}

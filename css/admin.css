@@ -1,0 +1,22 @@
+body {
+    background-image: url('../uploads/background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+}
+#sidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: 20px;
+    background-color: #4c4c4c;
+}
