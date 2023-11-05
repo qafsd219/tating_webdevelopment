@@ -51,7 +51,7 @@
                 <!-- Page content goes here -->
                 <div id="page-content">
                     <!-- CONTENT HERE -->
-                    <?php include('process/employee_registration_save.php'); ?>
+                    <?php include('process/employee_registration_save_page.php'); ?>
                 </div>
             </main>
         </div>

@@ -6,6 +6,7 @@
     <title>Doctor Jen's | POS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -134,7 +135,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Quantity">Quantity:</label>
-                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" required>
+                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" value="1" required>
                         </div>
                         <div class="form-group">
                             <label for="ItemPrice">Price:</label>
@@ -185,7 +186,7 @@
                             <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="employee" onclick="handleDiscounts(0.1)">
                                 <label class="form-check-label" for="flexRadioDefault1">Employee Discount (10%)</label>
                             </li>
-                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)" checked>
+                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)">
                                 <label class="form-check-label" for="flexRadioDefault1">No Discount</label>
                             </li>
                         </ul>
@@ -198,7 +199,7 @@
                                 <button type="button" class="btn btn-danger w-100" onclick="handleNew()">New</button>
                             </div>
                             <div class="col3">
-                                <button type="button" class="btn btn-warning w-100">Save</button>
+                                <button type="button" class="btn btn-warning w-100" id="save">Save</button>
                             </div>
                             <div class="col">
                                 <button type="button" class="btn btn-dark w-100">Update</button>
@@ -264,11 +265,17 @@
                     </div>
                 </div>
             </main>
+            <script>
+                totalQuantity = 0;
+                totalDiscount = 0;
+                totalDiscounted = 0;
+            </script>
             <script src="js/calculator.js" defer></script>
             <script src="js/change.js" defer></script>
             <script src="js/new.js" defer></script>
             <script src="js/discounts.js" defer></script>
             <script src="js/items.js" defer></script>
+            <script src="js/jonas_pos_save.js"></script>
         </div>
     </div>
 </body>
