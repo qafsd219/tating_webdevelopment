@@ -2,7 +2,6 @@
 
 try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
         $employee_number = $_POST['employee_no'];
         $basic_rate_hour = $_POST['basic_rate_hour'];
         $basic_num_hours_cutoff = $_POST['basic_num_hours_cutoff'];

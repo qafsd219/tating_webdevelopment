@@ -170,7 +170,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+                </div>
                     <div class="col">
                         <div class="col d-flex mt-4">
                             <ul class="">
@@ -395,9 +395,9 @@
                             </ul>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>

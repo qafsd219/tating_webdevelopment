@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +15,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- EMPLOYEE REG FILE LINK-->
     <script src="js/emp_data_save.js"></script>
-    <link rel="stylesheet" href="../css/employee_registration.css">
 </head>
 <body>
     <div class="container">
@@ -304,7 +302,7 @@
                     <input type="text" class="form-control mt-0" name="employee_status" id="employee_status" value="">
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-4">
+                    <div class="form-group col-6">
                         <label for="pay_day" class="mb-0 controllabel">Paydate</label>
                         <input type="date" class="form-control mt-0" name="pay_date" id="pay_date">
                     </div>
