@@ -1,4 +1,3 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
     <title>Doctor Jen's | POS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -112,7 +112,6 @@
                         totalDiscounted = 0;
                         // Get all checkboxes with the class "checkbox-group"
                         var checkboxes = document.querySelectorAll('.checkbox-group');
-
                         // Add an event listener to each checkbox
                         checkboxes.forEach(function(checkbox) {
                             checkbox.addEventListener('change', function() {
@@ -132,38 +131,38 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="ItemName">Name of Item:</label>
-                            <input type="text" class="form-control" id="ItemName" name="ItemName" readonly>
+                            <input type="text" class="form-control" id="ItemName" name="ItemName" style="background-color:#ccc" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Quantity">Quantity:</label>
-                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" required>
+                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" value="1" required>
                         </div>
                         <div class="form-group">
                             <label for="ItemPrice">Price:</label>
-                            <input type="text" class="form-control" id="ItemPrice" name="ItemPrice" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="ItemPrice" name="ItemPrice" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Discount">Discount Amount:</label>
-                            <input type="text" class="form-control" id="Discount" name="Discount" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="Discount" name="Discount" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Discounted">Discounted Amount:</label>
-                            <input type="text" class="form-control" id="Discounted" name="Discounted" aria-label="Amount (to the nearest dollar)"  readonly>
+                            <input type="text" class="form-control" id="Discounted" name="Discounted" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)"  readonly>
                         </div>
                     </div>
                     <!-- COLUMN 2 -->
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="totalQuantity">Total Quantity:</label>
-                            <input type="text" class="form-control" id="totalQuantity" name="totalQuantity" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalQuantity" name="totalQuantity" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="totalDiscount">Total Discount Given:</label>
-                            <input type="text" class="form-control" id="totalDiscount" name="totalDiscount" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalDiscount" name="totalDiscount" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="totalDiscounted">Total Discounted Amount:</label>
-                            <input type="text" class="form-control" id="totalDiscounted" name="totalDiscounted" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalDiscounted" name="totalDiscounted" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Cash">Cash Given:</label>
@@ -171,7 +170,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Change">Change:</label>
-                            <input type="text" class="form-control" id="Change" name="Change" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="Change" name="Change" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                     </div>
                     <!-- DISCOUNT OPTIONS -->
@@ -200,7 +199,7 @@
                                 <button type="button" class="btn btn-danger w-100" onclick="handleNew()">New</button>
                             </div>
                             <div class="col3">
-                                <button type="button" class="btn btn-warning w-100">Save</button>
+                                <button type="button" class="btn btn-warning w-100" id="save">Save</button>
                             </div>
                             <div class="col">
                                 <button type="button" class="btn btn-dark w-100">Update</button>
@@ -271,6 +270,7 @@
             <script src="js/new.js" defer></script>
             <script src="js/discounts.js" defer></script>
             <script src="js/items.js" defer></script>
+            <script src="js/jonas_pos_save.js"></script>
         </div>
     </div>
 </body>
