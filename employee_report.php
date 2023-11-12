@@ -52,7 +52,7 @@
                             <a class="nav-link" href="pos.php">POS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">POS Sales Report</a>
+                            <a class="nav-link" href="pos_sales_report.php">POS Sales Report</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="user.php">User Account</a>
