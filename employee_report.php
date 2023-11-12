@@ -46,7 +46,7 @@
                             <a class="nav-link" href="payroll.php">Payroll</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Payroll Report</a>
+                            <a class="nav-link" href="payroll_report.php">Payroll Report</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pos.php">POS</a>
