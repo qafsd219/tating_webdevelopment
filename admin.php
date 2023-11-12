@@ -23,7 +23,7 @@
                             <a class="nav-link" href="employee_registration_save.php">Employee Registration</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Employee Report</a>
+                            <a class="nav-link" href="employee_report.php">Employee Report</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="payroll.php">Payroll</a>
