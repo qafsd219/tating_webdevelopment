@@ -106,7 +106,6 @@
                                             while ($item = $result->fetch_assoc()) {
                                                 echo "
                                         <tr>
-                                            <td class='py-6 ps-6'>$item[id]</td>
                                             <td class='py-6 ps-6'>$item[employee_no]</td>
                                             <td class='py-6 ps-6'>$item[income_date]</td>
                                             <td class='py-6 ps-6'>$item[basic_rate_hour]</td>

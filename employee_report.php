@@ -6,7 +6,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $item_name = $_POST['search'];
-        $sql = "SELECT * FROM `personal_infotbl` WHERE employee_no = '$item_name' OR id = '$item_name' OR ;";
+        $sql = "SELECT * FROM `personal_infotbl` WHERE employee_no='$item_name' OR fname='$item_name';";
         $result = $conn->query($sql);
         if (!$item_name) {
             $sql = "SELECT * FROM `personal_infotbl`;";
@@ -86,51 +86,16 @@
                                     <table class="table table-borderless bg-white rounded small table-hover">
                                         <thead class="border-bottom">
                                             <tr>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">ID</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee No.</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">First Name</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Middle Name</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Last Name</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">address_line1</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">address_line2</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Birthdate</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Civil Status</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Contact No.</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Country</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Department</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Designation</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Email Address</span>
-                                                </th>
-                                                <th class="py-6 ps-6">
-                                                    <span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee Status</span>
-                                                </th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee No.</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">First Name</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Middle Name</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Last Name</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Birthdate</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Qual. Dependents</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Civil Status</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Department</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Designation</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee Status</span></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -139,20 +104,15 @@
                                                 while ($item = $result->fetch_assoc()) {
                                                     echo "
                                             <tr class='clickable-row' data-href='employee_registration_save.php?id={$item['id']}'>
-                                                <td class='py-6 ps-6'>$item[id]</td>
                                                 <td class='py-6 ps-6'>$item[employee_no]</td>
                                                 <td class='py-6 ps-6'>$item[fname]</td>
                                                 <td class='py-6 ps-6'>$item[mname]</td>
                                                 <td class='py-6 ps-6'>$item[lname]</td>
-                                                <td class='py-6 ps-6'>$item[address_line1]</td>
-                                                <td class='py-6 ps-6'>$item[address_line2]</td>
                                                 <td class='py-6 ps-6'>$item[birth_date]</td>
+                                                <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
                                                 <td class='py-6 ps-6'>$item[civil_status]</td>
-                                                <td class='py-6 ps-6'>$item[contact_no]</td>
-                                                <td class='py-6 ps-6'>$item[country]</td>
                                                 <td class='py-6 ps-6'>$item[department]</td>
                                                 <td class='py-6 ps-6'>$item[designation]</td>
-                                                <td class='py-6 ps-6'>$item[email_address]</td>
                                                 <td class='py-6 ps-6'>$item[employee_status]</td>
                                             </tr>
                                             ";
