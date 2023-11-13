@@ -60,7 +60,7 @@
                             <ul class="dropdown-menu" name="products" id="products">
                                 <li><a class="dropdown-item" href="pos_cellphone.php">Cellphones</a></li>
                                 <li><a class="dropdown-item" href="pos_cars.php">Cars</a></li>
-                                <li><a class="dropdown-item" href="pos_mouse.php">mouse</a></li>
+                                <li><a class="dropdown-item" href="pos_chips.php">Chips</a></li>
                                 <li><a class="dropdown-item" href="pos_mouse.php">Mice</a></li>
                             </ul>
                         </div>
@@ -177,16 +177,16 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-horizontal gap-5">
                             <li class="" style="list-style-type: none;">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="senior" onclick="handleDiscounts(0.12)">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="senior" onclick="handleDiscounts(0.12)" value="senior discount">
                                 <label class="form-check-label" for="flexRadioDefault1">Senior Citizen (12%)</label>
                             </li>
-                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="discountCard" onclick="handleDiscounts(0.08)">
+                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="discountCard" onclick="handleDiscounts(0.08)" value="discount card">
                                 <label class="form-check-label" for="flexRadioDefault1">With Disc. Card (8%)</label>
                             </li>
-                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="employee" onclick="handleDiscounts(0.1)">
+                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="employee" onclick="handleDiscounts(0.1)" value="employee discount">
                                 <label class="form-check-label" for="flexRadioDefault1">Employee Discount (10%)</label>
                             </li>
-                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)" checked>
+                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)" value="no discount">
                                 <label class="form-check-label" for="flexRadioDefault1">No Discount</label>
                             </li>
                         </ul>

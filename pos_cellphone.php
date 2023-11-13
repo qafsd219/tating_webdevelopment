@@ -186,7 +186,7 @@
                             <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="employee" onclick="handleDiscounts(0.1)" value="employee discount">
                                 <label class="form-check-label" for="flexRadioDefault1">Employee Discount (10%)</label>
                             </li>
-                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)">
+                            <li class="" style="list-style-type: none;"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="noDiscount" onclick="handleDiscounts(0)" value="no discount">
                                 <label class="form-check-label" for="flexRadioDefault1">No Discount</label>
                             </li>
                         </ul>
