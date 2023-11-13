@@ -87,9 +87,7 @@
                                         <thead class="border-bottom">
                                             <tr>
                                                 <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee No.</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">First Name</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Middle Name</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Last Name</span></th>
+                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee Name</span></th>
                                                 <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Birthdate</span></th>
                                                 <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Qual. Dependents</span></th>
                                                 <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Civil Status</span></th>
@@ -105,9 +103,7 @@
                                                     echo "
                                             <tr class='clickable-row' data-href='employee_registration_save.php?id={$item['id']}'>
                                                 <td class='py-6 ps-6'>$item[employee_no]</td>
-                                                <td class='py-6 ps-6'>$item[fname]</td>
-                                                <td class='py-6 ps-6'>$item[mname]</td>
-                                                <td class='py-6 ps-6'>$item[lname]</td>
+                                                <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
                                                 <td class='py-6 ps-6'>$item[birth_date]</td>
                                                 <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
                                                 <td class='py-6 ps-6'>$item[civil_status]</td>
