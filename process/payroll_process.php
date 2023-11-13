@@ -31,15 +31,15 @@ function empty_inputbox()
     $other_loans = "";
 }
 //decleration of variables with fix data value for employee info
-$employee_no = "67890";
-$department = "COECSA";
-$firstname = "Jonas";
-$mname = "Austin";
-$surname = "Tating";
+$employee_no = "";
+$department = "";
+$firstname = "";
+$mname = "";
+$surname = "";
 $civil_status = "Single";
 $designation = "Student";
 $qualified_dependents = "S";
-$paydate = "October 9 2023";
+$paydate = "";
 $emp_status = "Job Order";
 //decleration of variables where inputs are stored
 $basic_rate_hour = "";

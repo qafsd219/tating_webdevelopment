@@ -1,15 +1,19 @@
 <?php
     include 'process/db_connection.php';
     $conn = OpenCon();
-    $sql = "SELECT * FROM `incometbl`;";
+    $sql = "SELECT * FROM personal_infotbl INNER JOIN incometbl ON personal_infotbl.employee_no = incometbl.employee_no
+            INNER JOIN deductiontbl ON incometbl.employee_no=deductiontbl.employee_no";
     $result = $conn->query($sql);
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $item_name = $_POST['search'];
-        $sql = "SELECT * FROM `incometbl` WHERE employee_no = '$item_name' OR id = '$item_name';";
+        $sql = "SELECT * FROM personal_infotbl INNER JOIN incometbl ON personal_infotbl.employee_no = incometbl.employee_no
+                INNER JOIN deductiontbl ON incometbl.employee_no = deductiontbl.employee_no 
+                WHERE personal_infotbl.employee_no='$item_name' OR personal_infotbl.fname='$item_name' OR personal_infotbl.mname='$item_name' OR personal_infotbl.lname='$item_name'";
         $result = $conn->query($sql);
         if (!$item_name) {
-            $sql = "SELECT * FROM `incometbl`;";
+            $sql = "SELECT * FROM personal_infotbl INNER JOIN incometbl ON personal_infotbl.employee_no = incometbl.employee_no
+                    INNER JOIN deductiontbl ON incometbl.employee_no = deductiontbl.employee_no";
             $result = $conn->query($sql);
         }
     }
@@ -84,20 +88,15 @@
                                 <table class="table table-borderless bg-white rounded small">
                                     <thead class="border-bottom">
                                         <tr>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">id</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">employee_no</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">income_date</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">basic_rate_hour</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">basic_num_hrs</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">basic_income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">hono_rate_hour</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">hono_num_hrs</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">hono_income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">other_rate_hour</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">other_num_hrs</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">other_income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">gross_income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">net_income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Employee No.</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Employee Name</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Basic Income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Honorarium Income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Other Income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Gross Income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Total Deduction</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Net Income</span></th>
+                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Paydate</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -107,18 +106,14 @@
                                                 echo "
                                         <tr>
                                             <td class='py-6 ps-6'>$item[employee_no]</td>
-                                            <td class='py-6 ps-6'>$item[income_date]</td>
-                                            <td class='py-6 ps-6'>$item[basic_rate_hour]</td>
-                                            <td class='py-6 ps-6'>$item[basic_num_hrs]</td>
+                                            <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
                                             <td class='py-6 ps-6'>$item[basic_income]</td>
-                                            <td class='py-6 ps-6'>$item[hono_rate_hour]</td>
-                                            <td class='py-6 ps-6'>$item[hono_num_hrs]</td>
                                             <td class='py-6 ps-6'>$item[hono_income]</td>
-                                            <td class='py-6 ps-6'>$item[other_rate_hour]</td>
-                                            <td class='py-6 ps-6'>$item[other_num_hrs]</td>
                                             <td class='py-6 ps-6'>$item[other_income]</td>
                                             <td class='py-6 ps-6'>$item[gross_income]</td>
+                                            <td class='py-6 ps-6'>$item[total_deduction]</td>
                                             <td class='py-6 ps-6'>$item[net_income]</td>
+                                            <td class='py-6 ps-6'>$item[pay_date]</td>
                                         </tr>
                                         ";
                                             }

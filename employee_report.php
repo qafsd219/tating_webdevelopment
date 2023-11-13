@@ -98,22 +98,22 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            if ($result) {
-                                                while ($item = $result->fetch_assoc()) {
-                                                    echo "
-                                            <tr class='clickable-row' data-href='employee_registration_save.php?id={$item['id']}'>
-                                                <td class='py-6 ps-6'>$item[employee_no]</td>
-                                                <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
-                                                <td class='py-6 ps-6'>$item[birth_date]</td>
-                                                <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
-                                                <td class='py-6 ps-6'>$item[civil_status]</td>
-                                                <td class='py-6 ps-6'>$item[department]</td>
-                                                <td class='py-6 ps-6'>$item[designation]</td>
-                                                <td class='py-6 ps-6'>$item[employee_status]</td>
-                                            </tr>
-                                            ";
+                                                if ($result) {
+                                                    while ($item = $result->fetch_assoc()) {
+                                                        echo "
+                                                <tr class='clickable-row' data-href='employee_registration_save.php?id={$item['id']}'>
+                                                    <td class='py-6 ps-6'>$item[employee_no]</td>
+                                                    <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
+                                                    <td class='py-6 ps-6'>$item[birth_date]</td>
+                                                    <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
+                                                    <td class='py-6 ps-6'>$item[civil_status]</td>
+                                                    <td class='py-6 ps-6'>$item[department]</td>
+                                                    <td class='py-6 ps-6'>$item[designation]</td>
+                                                    <td class='py-6 ps-6'>$item[employee_status]</td>
+                                                </tr>
+                                                ";
+                                                    }
                                                 }
-                                            }
                                             ?>
                                         </tbody>
                                     </table>

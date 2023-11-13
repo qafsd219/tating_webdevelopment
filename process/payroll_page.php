@@ -180,7 +180,7 @@
                                             First Name:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="firstname" name="firstname" class="form-control mb-1 w-75" value="<?php echo $firstname ?>" style="height:2rem;" disabled>
+                                            <input type="text" id="firstname" name="firstname" class="form-control mb-1 w-75" value="<?php echo $firstname ?>" style="height:2rem;">
                                         </div>
                                     </div>
                                 </li>
@@ -190,7 +190,7 @@
                                             Middle Name:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="mname" name="mname" class="form-control mb-1 w-75" value="<?php echo $mname ?>" style="height:2rem;" disabled>
+                                            <input type="text" id="mname" name="mname" class="form-control mb-1 w-75" value="<?php echo $mname ?>" style="height:2rem;">
                                         </div>
                                     </div>
                                 </li>
@@ -200,7 +200,7 @@
                                             Surname:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="surname" name="surname" class="form-control mb-1 w-75" value="<?php echo $surname ?>" style="height:2rem;" disabled>
+                                            <input type="text" id="surname" name="surname" class="form-control mb-1 w-75" value="<?php echo $surname ?>" style="height:2rem;">
                                         </div>
                                     </div>
                                 </li>
@@ -210,7 +210,7 @@
                                             Civil Status:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="civil_status" name="civil_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $civil_status ?>" disabled>
+                                            <input type="text" id="civil_status" name="civil_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $civil_status ?>">
                                         </div>
                                     </div>
                                 </li>
@@ -220,7 +220,7 @@
                                             Designation:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="designation" name="designation" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $designation ?>" disabled>
+                                            <input type="text" id="designation" name="designation" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $designation ?>">
                                         </div>
                                     </div>
                                 </li>
@@ -240,7 +240,7 @@
                                             Paydate:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="paydate" name="paydate" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $paydate ?>" disabled>
+                                            <input type="date" id="paydate" name="paydate" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $paydate ?>">
                                         </div>
                                     </div>
                                 </li>
@@ -250,7 +250,7 @@
                                             Employee Status:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="emp_status" name="emp_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $emp_status ?>" disabled>
+                                            <input type="text" id="emp_status" name="emp_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $emp_status ?>">
                                         </div>
                                     </div>
                                 </li>

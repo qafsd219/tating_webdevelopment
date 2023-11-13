@@ -80,17 +80,15 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">item_name</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">Product Name</th>
                                     <th scope="col">Quantity</th>
+                                    <th scope="col">Product Price</th>
                                     <th scope="col">Discount Amount</th>
                                     <th scope="col">Discounted Amount</th>
-                                    <th scope="col">Total Quantity</th>
-                                    <th scope="col">Total Discount Given</th>
-                                    <th scope="col">Total Discounted Amount</th>
+                                    <th scope="col">Discount Option</th>
                                     <th scope="col">Cash Given</th>
                                     <th scope="col">Change</th>
+                                    <th scope="col">Sale ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -99,17 +97,15 @@
                                     while ($item = $result->fetch_assoc()) {
                                         echo "
                                         <tr>
-                                            <th scope='row'>$item[id]</th>
                                             <td>$item[item_name]</td>
-                                            <td>$item[price]</td>
                                             <td>$item[quantity]</td>
+                                            <td>$item[price]</td>
                                             <td>$item[discount_amount]</td>
                                             <td>$item[discounted_amount]</td>
-                                            <td>$item[total_quantity]</td>
-                                            <td>$item[total_discount_given]</td>
-                                            <td>$item[total_discounted_amount]</td>
+                                            <td>$item[discount_option]</td>
                                             <td>$item[cash_given]</td>
                                             <td>$item[customer_change]</td>
+                                            <th scope='row'>$item[id]</th>
                                         </tr>
                                         ";
                                     }
