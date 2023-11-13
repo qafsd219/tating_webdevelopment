@@ -68,9 +68,8 @@
                 <!-- Page content goes here -->
                 <h1>Doctor Jen's Choice Enterprise</h1>
                 <div id="page-content">
-                    <!--  AAAAAAAA -->
                     <div class="flex-grow-1">
-                        <div class="px-5">
+                        <div class="px-10">
                             <h1 class="d-flex justify-content-center m-2" style="font-size:30px;">Employee Report</h1>
                             <div class="row justify-content-end">
                                 <form action="" method="post" class="input-group mb-3 mt-3" style="height: 2rem; width:250px">
