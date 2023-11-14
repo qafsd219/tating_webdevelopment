@@ -2,14 +2,13 @@
 function empty_inputbox()
 {
     $employee_no = "";
-    $employee_no = "";
-    $department = "";
+    $department = "COECSA";
     $firstname = "";
     $mname = "";
     $surname = "";
-    $civil_status = "";
-    $designation = "";
-    $qualified_dependents = "";
+    $civil_status = "Single";
+    $designation = "Student";
+    $qualified_dependents = "S";
     $paydate = "";
     $emp_status = "";
     //decleration of variables where inputs are stored
@@ -32,7 +31,7 @@ function empty_inputbox()
 }
 //decleration of variables with fix data value for employee info
 $employee_no = "";
-$department = "";
+$department = "COECSA";
 $firstname = "";
 $mname = "";
 $surname = "";
