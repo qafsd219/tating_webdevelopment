@@ -13,7 +13,7 @@
 <body>
     <div class="container border bg-white">
         <h1 class="d-flex justify-content-center m-2" style="font-size:40px;"> Doctor Jen's Choice Payroll</h1>
-        <!-- form -->
+        <!-- FORM -->
         <form class="row" method="post">
             <div class="col">
                 <div class="d-flex justify-content-center align-items-center flex-column">
@@ -149,7 +149,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">First Name: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="firstname" name="firstname" class="form-control mb-1 w-75" value="<?php echo $firstname ?>" style="height:2rem;">
+                                            <input type="text" id="firstname" name="firstname" class="form-control mb-1 w-75" value="<?php echo $firstname ?>" style="height:2rem;" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -157,7 +157,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">Middle Name: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="mname" name="mname" class="form-control mb-1 w-75" value="<?php echo $mname ?>" style="height:2rem;">
+                                            <input type="text" id="mname" name="mname" class="form-control mb-1 w-75" value="<?php echo $mname ?>" style="height:2rem;" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -165,7 +165,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">Surname: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="surname" name="surname" class="form-control mb-1 w-75" value="<?php echo $surname ?>" style="height:2rem;">
+                                            <input type="text" id="surname" name="surname" class="form-control mb-1 w-75" value="<?php echo $surname ?>" style="height:2rem;" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -175,7 +175,7 @@
                                             Civil Status:
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="civil_status" name="civil_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $civil_status ?>">
+                                            <input type="text" id="civil_status" name="civil_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $civil_status ?>" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -183,7 +183,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">Designation: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="designation" name="designation" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $designation ?>">
+                                            <input type="text" id="designation" name="designation" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $designation ?>" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -191,7 +191,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">Qualified Dependents: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="qualified_dependents" name="qualified_dependents" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $qualified_dependents ?>">
+                                            <input type="text" id="qualified_dependents" name="qualified_dependents" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $qualified_dependents ?>" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -207,7 +207,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">Employee Status: </div>
                                         <div class="col-md-6">
-                                            <input type="text" id="emp_status" name="emp_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $emp_status ?>">
+                                            <input type="text" id="emp_status" name="emp_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $emp_status ?>" disabled>
                                         </div>
                                     </div>
                                 </li>

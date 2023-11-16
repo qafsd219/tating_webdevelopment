@@ -2,7 +2,7 @@
 function empty_inputbox()
 {
     $employee_no = "";
-    $department = "COECSA";
+    $department = "";
     $firstname = "";
     $mname = "";
     $surname = "";
@@ -32,9 +32,9 @@ function empty_inputbox()
 //decleration of variables with fix data value for employee info
 $employee_no = "";
 $department = "COECSA";
-$firstname = "";
-$mname = "";
-$surname = "";
+$firstname = "Jonas";
+$mname = "Austin";
+$surname = "Tating";
 $civil_status = "Single";
 $designation = "Student";
 $qualified_dependents = "S";
