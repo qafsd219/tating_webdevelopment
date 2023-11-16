@@ -86,14 +86,14 @@
                                     <table class="table table-borderless bg-white rounded small table-hover">
                                         <thead class="border-bottom">
                                             <tr>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee No.</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee Name</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Birthdate</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Qual. Dependents</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Civil Status</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Department</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Designation</span></th>
-                                                <th class="py-6 ps-6"><span class="me-1 btn p-0 d-flex align-items-center text-secondary pe-none">Employee Status</span></th>
+                                                <th class="py-6 ps-6">Employee No.</th>
+                                                <th class="py-6 ps-6">Employee Name</th>
+                                                <th class="py-6 ps-6">Birthdate</th>
+                                                <th class="py-6 ps-6">Qual. Dependents</th>
+                                                <th class="py-6 ps-6">Civil Status</th>
+                                                <th class="py-6 ps-6">Department</th>
+                                                <th class="py-6 ps-6">Designation</th>
+                                                <th class="py-6 ps-6">Employee Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>

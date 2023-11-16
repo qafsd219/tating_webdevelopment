@@ -88,15 +88,15 @@
                                 <table class="table table-borderless bg-white rounded small">
                                     <thead class="border-bottom">
                                         <tr>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Employee No.</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Employee Name</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Basic Income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Honorarium Income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Other Income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Gross Income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Total Deduction</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Net Income</span></th>
-                                            <th class="py-6 ps-6"><span class="btn p-0 d-flex align-items-center text-secondary  pe-none">Paydate</span></th>
+                                            <th class="py-6 ps-6">Employee No.</th>
+                                            <th class="py-6 ps-6">Employee Name</th>
+                                            <th class="py-6 ps-6">Basic Income</th>
+                                            <th class="py-6 ps-6">Honorarium Income</th>
+                                            <th class="py-6 ps-6">Other Income</th>
+                                            <th class="py-6 ps-6">Gross Income</th>
+                                            <th class="py-6 ps-6">Total Deduction</th>
+                                            <th class="py-6 ps-6">Net Income</th>
+                                            <th class="py-6 ps-6">Paydate</th>
                                         </tr>
                                     </thead>
                                     <tbody>

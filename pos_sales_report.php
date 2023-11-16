@@ -77,42 +77,44 @@
                                     </svg></button>
                             </form>
                         </div>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Product Price</th>
-                                    <th scope="col">Discount Amount</th>
-                                    <th scope="col">Discounted Amount</th>
-                                    <th scope="col">Discount Option</th>
-                                    <th scope="col">Cash Given</th>
-                                    <th scope="col">Change</th>
-                                    <th scope="col">Sale ID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if ($result) {
-                                    while ($item = $result->fetch_assoc()) {
-                                        echo "
-                                        <tr>
-                                            <td>$item[item_name]</td>
-                                            <td>$item[quantity]</td>
-                                            <td>$item[price]</td>
-                                            <td>$item[discount_amount]</td>
-                                            <td>$item[discounted_amount]</td>
-                                            <td>$item[discount_option]</td>
-                                            <td>$item[cash_given]</td>
-                                            <td>$item[customer_change]</td>
-                                            <th scope='row'>$item[id]</th>
-                                        </tr>
-                                        ";
+                        <section>
+                            <table class="table table-borderless bg-white rounded small table-hover">
+                                <thead class="border-bottom">
+                                    <tr>
+                                        <th class="py-6 ps-6">Product Name</th>
+                                        <th class="py-6 ps-6">Quantity</th>
+                                        <th class="py-6 ps-6">Product Price</th>
+                                        <th class="py-6 ps-6">Discount Amount</th>
+                                        <th class="py-6 ps-6">Discounted Amount</th>
+                                        <th class="py-6 ps-6">Discount Option</th>
+                                        <th class="py-6 ps-6">Cash Given</th>
+                                        <th class="py-6 ps-6">Change</th>
+                                        <th class="py-6 ps-6">Sale ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($result) {
+                                        while ($item = $result->fetch_assoc()) {
+                                            echo "
+                                            <tr>
+                                                <td class='py-6 ps-6'>$item[item_name]</td>
+                                                <td class='py-6 ps-6'>$item[quantity]</td>
+                                                <td class='py-6 ps-6'>$item[price]</td>
+                                                <td class='py-6 ps-6'>$item[discount_amount]</td>
+                                                <td class='py-6 ps-6'>$item[discounted_amount]</td>
+                                                <td class='py-6 ps-6'>$item[discount_option]</td>
+                                                <td class='py-6 ps-6'>$item[cash_given]</td>
+                                                <td class='py-6 ps-6'>$item[customer_change]</td>
+                                                <th class='py-6 ps-6'>$item[id]</th>
+                                            </tr>
+                                            ";
+                                        }
                                     }
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
                 </div>
             </main>
