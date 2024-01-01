@@ -63,7 +63,7 @@ $(document).ready(function () {
       success: function (result) {
         if (result.ok) {
           alert("Data successfully deleted");
-          window.location.href = "payroll_report.php";
+          window.location.href = "payroll.php";
         }
       },
     });

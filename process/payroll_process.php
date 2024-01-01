@@ -54,8 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_GET['id'])) {
         $fs_loan = $_POST["fs_loan"];
         $salary_loan = $_POST["salary_loan"];
         $other_loans = $_POST["other_loans"];
-        $qualified_dependents = $_POST["qualified_dependents"];
-
+        
         $basic_income_cutoff = $basic_rate_hour * $basic_num_hours_cutoff;
         $hono_income_cutoff = $hono_rate_hour * $hono_num_hours_cutoff;
         $other_income_cutoff = $other_rate_hour * $other_num_hours_cutoff;
@@ -235,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_GET['id'])) {
         $fs_loan = $_POST["fs_loan"];
         $salary_loan = $_POST["salary_loan"];
         $other_loans = $_POST["other_loans"];
-        $qualified_dependents = $_POST["qualified_dependents"];
+        
         $employee_no = $_POST['employee_no'];
 
         $basic_income_cutoff = $basic_rate_hour * $basic_num_hours_cutoff;

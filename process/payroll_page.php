@@ -1,6 +1,6 @@
 <?php 
-    include 'process/payroll_process.php';
-    include 'process/jonas_payroll_fill.php';
+    include 'payroll_process.php';
+    include 'jonas_payroll_fill.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,9 @@
                         <li class="list-group-item border-0">
                             <div class="row align-items-center">
                                 <div class="col-md-6"></div>
-                                <div class="col-md-5"><button type="button" name="search" id="search" class="btn btn-danger w-100">Search Employee</button></div>
+                                <div class="col-md-5">
+                                    <button type="button" name="search" id="search" class="btn btn-danger w-100 clickable">Search Employee</button>
+                                </div>
                             </div>
                         </li>
                         <h1 class="fs-5">Basic Income:</h1>
@@ -318,7 +320,7 @@
                                         </div>
 
                                         <div class="col-4">
-                                            <button type="submit" name='<?php echo !isset($isNew)  ? "update" : "save"; ?>' id='<?php echo !isset($isNew) ? "update" : "save"; ?>' class="btn btn-warning  w-100 " style="white-space: nowrap; font-size:0.9rem;"><?php echo !isset($isNew) ? "Update" : "Save"; ?></button>
+                                        <button type="submit" name='<?php echo !isset($isNew)  ? "update" : "save"; ?>' id='<?php echo !isset($isNew) ? "update" : "save"; ?>' class="btn btn-success  w-100 " style="white-space: nowrap; font-size:0.9rem;"><?php echo isset($isNew) ? "Update" : "Save"; ?></button>
                                         </div>
                                         <div class="col-4">
                                             <button type="submit" name="delete" id='delete' class="btn btn-danger  w-100" style="white-space: nowrap; font-size:0.9rem;">Delete</button>
@@ -340,8 +342,8 @@
     $(document).ready(function() {
         $(".clickable").click(function() {
             let id = document.getElementById("employee_no").value 
-            window.location = "payroll_page.php?search=" + id
+            window.location = "payroll.php?search=" + id
         })
     })
 </script>
-</html>+
+</html>

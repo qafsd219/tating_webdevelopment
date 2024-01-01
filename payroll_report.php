@@ -26,6 +26,7 @@
     <title>Doctor Jen's | Payroll Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/admin.css?v.3">
 </head>
 <body>
@@ -85,7 +86,7 @@
                         </div>
                         <section>
                             <div class="table-responsive">
-                                <table class="table table-borderless bg-white rounded small">
+                                <table class="table table-borderless bg-white rounded small table-hover">
                                     <thead class="border-bottom">
                                         <tr>
                                             <th class="py-6 ps-6">Employee No.</th>
@@ -104,7 +105,7 @@
                                         if ($result) {
                                             while ($item = $result->fetch_assoc()) {
                                                 echo "
-                                        <tr>
+                                        <tr class='clickable-row border' style='cursor: pointer' data-href='payroll.php?id={$item['employee_no']}'>
                                             <td class='py-6 ps-6'>$item[employee_no]</td>
                                             <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
                                             <td class='py-6 ps-6'>$item[basic_income]</td>
