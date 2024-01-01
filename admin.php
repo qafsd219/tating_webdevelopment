@@ -1,3 +1,4 @@
+<?php include 'process/session_check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,31 +21,28 @@
                             <a class="nav-link active" href="admin.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="employee_registration_save.php">Employee Registration</a>
+                            <a class="nav-link <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" href="employee_registration_save.php" >Employee Registration</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>">
                             <a class="nav-link" href="employee_report.php">Employee Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="payroll.php">Payroll</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" href="payroll.php">Payroll</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="payroll_report.php">Payroll Report</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" href="payroll_report.php">Payroll Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pos.php">POS</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" href="pos.php">POS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pos_sales_report.php">POS Sales Report</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" href="pos_sales_report.php">POS Sales Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user.php">User Account</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1) ? '' : 'd-none' ?>" href="user_account_report.php">User Account Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user_account_report.php">User Account Report</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Logout</a>
+                            <a class="nav-link" href="logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>

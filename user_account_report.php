@@ -1,6 +1,6 @@
 <?php
 include 'process/db_connection.php';
-
+include 'process/session_check.php';
 $conn = OpenCon();
 $sql = "SELECT * FROM user_accounttbl JOIN personal_infotbl ON user_accounttbl.employee_no = personal_infotbl.employee_no WHERE user_accounttbl.username = '' OR user_accounttbl.password = '' OR user_accounttbl.confirm_password = ''";
 $result = $conn->query($sql);
@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Doctor Jen's | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/admin.css?v.3">
 </head>
 <body>
@@ -38,31 +39,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             <a class="nav-link active" href="admin.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="employee_registration_save.php">Employee Registration</a>
+                            <a class="nav-link <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" href="employee_registration_save.php" >Employee Registration</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>">
                             <a class="nav-link" href="employee_report.php">Employee Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="payroll.php">Payroll</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" href="payroll.php">Payroll</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="payroll_report.php">Payroll Report</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" href="payroll_report.php">Payroll Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pos.php">POS</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" href="pos.php">POS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pos_sales_report.php">POS Sales Report</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" href="pos_sales_report.php">POS Sales Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user.php">User Account</a>
+                            <a class="nav-link <?php echo ($user_privilege == 1) ? '' : 'd-none' ?>" href="user_account_report.php">User Account Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user_account_report.php">User Account Report</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Logout</a>
+                            <a class="nav-link" href="logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -101,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             if ($result) {
                                                 while ($item = $result->fetch_assoc()) {
                                                     echo "
-                                            <tr class='clickable-row border' style='cursor: pointer' data-href='user_account.php?id={$item['employee_no']}'>
+                                            <tr class='clickable-row border' style='cursor: pointer' data-href='user.php?id={$item['employee_no']}'>
                                                 <td class='py-6 ps-6 border'>$item[employee_no]</td>
                                                 <td class='py-6 ps-6 border'>$item[fname] $item[mname] $item[lname]</td>
                                                 <td class='py-6 ps-6 border'>$item[username]</td>

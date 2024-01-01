@@ -1,6 +1,7 @@
 <?php 
     include 'payroll_process.php';
     include 'jonas_payroll_fill.php';
+    include 'process/session_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

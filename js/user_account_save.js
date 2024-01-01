@@ -38,7 +38,7 @@ function areAllValuesFilled(obj) {
       else {
         $.ajax({
           type: "POST",
-          url: "process/earl_useraccount_save.php",
+          url: "process/user_account_save.php",
           data: formData,
           dataType: "json",
           success: function (result) {
@@ -48,6 +48,23 @@ function areAllValuesFilled(obj) {
           },
         });
       }
+    });
+  
+    $("#delete").click(function (e) {
+      e.preventDefault();
+      
+      $.ajax({
+        type: "POST",
+        url: "process/jonas_payroll_delete.php",
+        data: formData,
+        dataType: "json",
+        success: function (result) {
+          if (result.ok) {
+            alert("Data successfully deleted!");
+            window.location.href = "payroll_report.php";
+          }
+        },
+      });
     });
   });
   
