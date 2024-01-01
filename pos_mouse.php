@@ -1,3 +1,6 @@
+<?php
+    include 'process/jonas_pos_fill.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +43,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="user.php">User Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_account_report.php">User Account Report</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php">Logout</a>
@@ -131,48 +137,50 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="ItemName">Name of Item:</label>
-                            <input type="text" class="form-control" id="ItemName" name="ItemName" style="background-color:#ccc" readonly>
+                            <input type="text" class="form-control" id="ItemName" name="ItemName" style="background-color:#ccc" value='<?php echo $item_name ?>' readonly>
                         </div>
                         <div class="form-group">
                             <label for="Quantity">Quantity:</label>
-                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" value="1" required>
+                            <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" value='<?php echo $quantity ?>' required>
                         </div>
                         <div class="form-group">
                             <label for="ItemPrice">Price:</label>
-                            <input type="text" class="form-control" id="ItemPrice" name="ItemPrice" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="ItemPrice" name="ItemPrice" style="background-color:#ccc" value='<?php echo $Itemprice ?>'aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Discount">Discount Amount:</label>
-                            <input type="text" class="form-control" id="Discount" name="Discount" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="Discount" name="Discount" style="background-color:#ccc" value='<?php echo $discount_amount ?>'aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Discounted">Discounted Amount:</label>
-                            <input type="text" class="form-control" id="Discounted" name="Discounted" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)"  readonly>
+                            <input type="text" class="form-control" id="Discounted" name="Discounted" style="background-color:#ccc" value='<?php echo $discounted_amount ?>' aria-label="Amount (to the nearest dollar)"  readonly>
                         </div>
                     </div>
                     <!-- COLUMN 2 -->
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="totalQuantity">Total Quantity:</label>
-                            <input type="text" class="form-control" id="totalQuantity" name="totalQuantity" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalQuantity" name="totalQuantity" style="background-color:#ccc" value='<?php echo $total_quantity ?>' aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="totalDiscount">Total Discount Given:</label>
-                            <input type="text" class="form-control" id="totalDiscount" name="totalDiscount" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalDiscount" name="totalDiscount" style="background-color:#ccc" value='<?php echo $total_discount_given ?>' aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="totalDiscounted">Total Discounted Amount:</label>
-                            <input type="text" class="form-control" id="totalDiscounted" name="totalDiscounted" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="totalDiscounted" name="totalDiscounted" style="background-color:#ccc" value='<?php echo $total_discounted_amount ?>' aria-label="Amount (to the nearest dollar)" readonly>
                         </div>
                         <div class="form-group">
                             <label for="Cash">Cash Given:</label>
-                            <input type="text" class="form-control" id="Cash" name="Cash" aria-label="Amount (to the nearest dollar)" required>
+                            <input type="text" class="form-control" id="Cash" name="Cash" value='<?php echo $cash_given ?>' aria-label="Amount (to the nearest dollar)" required>
                         </div>
                         <div class="form-group">
                             <label for="Change">Change:</label>
-                            <input type="text" class="form-control" id="Change" name="Change" style="background-color:#ccc" aria-label="Amount (to the nearest dollar)" readonly>
+                            <input type="text" class="form-control" id="Change" name="Change" style="background-color:#ccc" value='<?php echo $customer_change ?>' aria-label="Amount (to the nearest dollar)" readonly>
+                        <!--HIDDEN-->
                         </div>
-                    </div>
+                            <input type="text" class="form-control d-none" name='employee_no' value='<?php echo $user_employee_name ?>' aria-label="Amount (to the nearest dollar)" disabled id="employee_no">
+                        </div>
                     <!-- DISCOUNT OPTIONS -->
                     <div class="col-md-6">
                         <ul class="list-group list-group-horizontal gap-5">
@@ -265,6 +273,11 @@
                     </div>
                 </div>
             </main>
+            <script>
+                totalQuantity = 0;
+                totalDiscount = 0;
+                totalDiscounted = 0;
+            </script>
             <script src="js/calculator.js" defer></script>
             <script src="js/change.js" defer></script>
             <script src="js/new.js" defer></script>

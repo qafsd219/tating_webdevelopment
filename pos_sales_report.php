@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Jen's | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/admin.css?v.3">
 </head>
@@ -55,6 +56,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="user.php">User Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_account_report.php">User Account Report</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php">Logout</a>
@@ -97,7 +101,7 @@
                                     if ($result) {
                                         while ($item = $result->fetch_assoc()) {
                                             echo "
-                                            <tr>
+                                            <tr class='clickable-row' style='cursor: pointer' data-href='{$item['item_type']}.php?id={$item['id']}'>
                                                 <td class='py-6 ps-6'>$item[item_name]</td>
                                                 <td class='py-6 ps-6'>$item[quantity]</td>
                                                 <td class='py-6 ps-6'>$item[price]</td>
@@ -121,4 +125,11 @@
         </div>
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href")
+        })
+    })
+</script>
 </html>

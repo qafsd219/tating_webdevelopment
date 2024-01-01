@@ -1,28 +1,29 @@
 <?php
-    include 'process/db_connection.php';
-    $conn = OpenCon();
-    $sql = "SELECT * FROM `personal_infotbl`;";
-    $result = $conn->query($sql);
+include 'process/db_connection.php';
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $item_name = $_POST['search'];
-        $sql = "SELECT * FROM `personal_infotbl` WHERE employee_no='$item_name' OR fname='$item_name';";
+$conn = OpenCon();
+$sql = "SELECT * FROM user_accounttbl JOIN personal_infotbl ON user_accounttbl.employee_no = personal_infotbl.employee_no WHERE user_accounttbl.username = '' OR user_accounttbl.password = '' OR user_accounttbl.confirm_password = ''";
+$result = $conn->query($sql);
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $item_name = $_POST['search'];
+    if (!$item_name) {
+        $sql = "SELECT * FROM user_accounttbl JOIN personal_infotbl ON user_accounttbl.employee_no = personal_infotbl.employee_no;";
         $result = $conn->query($sql);
-        if (!$item_name) {
-            $sql = "SELECT * FROM `personal_infotbl`;";
-            $result = $conn->query($sql);
-        }
+    } else {
+        $sql = "SELECT * FROM user_accounttbl JOIN personal_infotbl ON user_accounttbl.employee_no = personal_infotbl.employee_no WHERE user_accounttbl.employee_no = $item_name;";
+        $result = $conn->query($sql);
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Jen's | Employee Report</title>
+    <title>Doctor Jen's | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/admin.css?v.3">
 </head>
 <body>
@@ -89,35 +90,27 @@
                                     <table class="table table-borderless bg-white rounded small table-hover">
                                         <thead class="border-bottom">
                                             <tr>
-                                                <th class="py-6 ps-6">Employee No.</th>
-                                                <th class="py-6 ps-6">Employee Name</th>
-                                                <th class="py-6 ps-6">Birthdate</th>
-                                                <th class="py-6 ps-6">Qual. Dependents</th>
-                                                <th class="py-6 ps-6">Civil Status</th>
-                                                <th class="py-6 ps-6">Department</th>
-                                                <th class="py-6 ps-6">Designation</th>
-                                                <th class="py-6 ps-6">Employee Status</th>
+                                                <th class="py-6 ps-6">Employee Number</th>
+                                                <th class="py-6 ps-6">Name</th>
+                                                <th class="py-6 ps-6">Username</th>
+                                                <th class="py-6 ps-6">User Level</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                if ($result) {
-                                                    while ($item = $result->fetch_assoc()) {
-                                                        echo "
-                                                <tr class='clickable-row' data-href='employee_registration_save.php?id={$item['id']}'>
-                                                    <td class='py-6 ps-6'>$item[employee_no]</td>
-                                                    <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
-                                                    <td class='py-6 ps-6'>$item[birth_date]</td>
-                                                    <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
-                                                    <td class='py-6 ps-6'>$item[civil_status]</td>
-                                                    <td class='py-6 ps-6'>$item[department]</td>
-                                                    <td class='py-6 ps-6'>$item[designation]</td>
-                                                    <td class='py-6 ps-6'>$item[employee_status]</td>
-                                                </tr>
-                                                ";
-                                                    }
+                                        <?php
+                                            if ($result) {
+                                                while ($item = $result->fetch_assoc()) {
+                                                    echo "
+                                            <tr class='clickable-row border' style='cursor: pointer' data-href='user_account.php?id={$item['employee_no']}'>
+                                                <td class='py-6 ps-6 border'>$item[employee_no]</td>
+                                                <td class='py-6 ps-6 border'>$item[fname] $item[mname] $item[lname]</td>
+                                                <td class='py-6 ps-6 border'>$item[username]</td>
+                                                <td class='py-6 ps-6 border'>$item[privilege]</td>
+                                            </tr>
+                                            ";
                                                 }
-                                            ?>
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
