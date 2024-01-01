@@ -1,4 +1,3 @@
-<?php require_once('process/payroll_process.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,0 +1,57 @@
+<?php
+$fname = '';
+$mname = '';
+$lname = '';
+$suffix = '';
+$gender = '';
+$nationality = '';
+$civil_status = '';
+$department = '';
+$designation = '';
+$employee_status = '';
+$paydate = '';
+$employee_no = '';
+$contact_no = '';
+$email_address = '';
+$social_media_account_id = '';
+$address_line1 = '';
+$address_line2 = '';
+$municipality = '';
+$state_province = '';
+$country = '';
+$zip_code = '';
+$pic_path ='';
+
+if (isset($_GET['id'])) {
+    include 'process/db_connection.php';
+    $conn = OpenCon();
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM `personal_infotbl` WHERE id = $id;";
+    $result = mysqli_fetch_assoc($conn->query($sql));
+    $fname = $result['fname'];
+    $mname = $result['mname'];
+    $lname = $result['lname'];
+    $suffix = $result['suffix'];
+    $birth_date = $result['birth_date'];
+    $gender = $result['gender'];
+    $nationality = $result['nationality'];
+    $civil_status = $result['civil_status'];
+    $department = $result['department'];
+    $designation = $result['designation'];
+    $qualified_dependent_status = $result['qualified_dependent_status'];
+    $employee_status = $result['employee_status'];
+    $pay_date = $result['pay_date'];
+    $employee_no = $result['employee_no'];
+    $contact_no = $result['contact_no'];
+    $email_address = $result['email_address'];
+    $other_social_media_account = $result['other_social_media_account'];
+    $social_media_account_id = $result['social_media_account_id'];
+    $address_line1 = $result['address_line1'];
+    $address_line2 = $result['address_line2'];
+    $municipality = $result['municipality'];
+    $state_province = $result['state_province'];
+    $country = $result['country'];
+    $zip_code = $result['zip_code'];
+    $pic_path = $result['picpath'];
+    $type = "Update";
+}

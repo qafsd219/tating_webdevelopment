@@ -126,4 +126,11 @@
         </div>
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href")
+        })
+    })
+</script>
 </html>

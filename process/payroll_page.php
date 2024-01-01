@@ -1,3 +1,7 @@
+<?php 
+    include 'process/payroll_process.php';
+    include 'process/jonas_payroll_fill.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <h1 class="fs-5 mx-4">Employee Basic Info:</h1>
                     <div class="card mb-3 mx-4" style="width: 14rem;">
-                        <img src="uploads/profile.jpg" class="card-img-top" alt="..." height="190">
+                        <img src=<?php echo isset($type) ? "$type" : "uploads/profile.jpg"; ?> class="card-img-top" alt="..." height="190">
                         <input type="file" class="p-1">
                     </div>
                 </div>
@@ -41,10 +45,11 @@
                                 </div>
                             </div>
                         </li>
+                        <!-- SEARCH BUTTON -->
                         <li class="list-group-item border-0">
                             <div class="row align-items-center">
                                 <div class="col-md-6"></div>
-                                <div class="col-md-5"><button type="button" id="search_button" class="btn btn-danger w-100">Search Employee</button></div>
+                                <div class="col-md-5"><button type="button" name="search" id="search" class="btn btn-danger w-100">Search Employee</button></div>
                             </div>
                         </li>
                         <h1 class="fs-5">Basic Income:</h1>
@@ -147,7 +152,7 @@
                             <ul class="">
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">First Name: </div>
+                                        <div class="col-md-6"> First Name: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="firstname" name="firstname" class="form-control mb-1 w-75" value="<?php echo $firstname ?>" style="height:2rem;" disabled>
                                         </div>
@@ -155,7 +160,7 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">Middle Name: </div>
+                                        <div class="col-md-6"> Middle Name: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="mname" name="mname" class="form-control mb-1 w-75" value="<?php echo $mname ?>" style="height:2rem;" disabled>
                                         </div>
@@ -163,7 +168,7 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">Surname: </div>
+                                        <div class="col-md-6"> Surname: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="surname" name="surname" class="form-control mb-1 w-75" value="<?php echo $surname ?>" style="height:2rem;" disabled>
                                         </div>
@@ -171,9 +176,7 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            Civil Status:
-                                        </div>
+                                        <div class="col-md-6"> Civil Status: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="civil_status" name="civil_status" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $civil_status ?>" disabled>
                                         </div>
@@ -181,7 +184,7 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">Designation: </div>
+                                        <div class="col-md-6"> Designation: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="designation" name="designation" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $designation ?>" disabled>
                                         </div>
@@ -189,7 +192,7 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">Qualified Dependents: </div>
+                                        <div class="col-md-6"> Qualified Dependents: </div>
                                         <div class="col-md-6">
                                             <input type="text" id="qualified_dependents" name="qualified_dependents" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $qualified_dependents ?>" disabled>
                                         </div>
@@ -197,9 +200,9 @@
                                 </li>
                                 <li class="list-group-item border-0">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">Paydate: </div>
+                                        <div class="col-md-6"> Paydate: </div>
                                         <div class="col-md-6">
-                                            <input type="date" id="paydate" name="paydate" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $paydate ?>">
+                                            <input type="date" id="paydate" name="paydate" class="form-control mb-1 w-75" style="height:2rem;" value="<?php echo $paydate ?>" disabled>
                                         </div>
                                     </div>
                                 </li>
@@ -313,17 +316,15 @@
                                         <div class="col-3">
                                             <button type="submit" name="new" class="btn btn-warning w-100" style="white-space: nowrap; font-size:0.9rem;">New</button>
                                         </div>
+
                                         <div class="col-4">
-                                            <button type="submit" name='save' id='save' class="btn btn-warning  w-100 " style="white-space: nowrap; font-size:0.9rem;">Save</button>
+                                            <button type="submit" name='<?php echo !isset($isNew)  ? "update" : "save"; ?>' id='<?php echo !isset($isNew) ? "update" : "save"; ?>' class="btn btn-warning  w-100 " style="white-space: nowrap; font-size:0.9rem;"><?php echo !isset($isNew) ? "Update" : "Save"; ?></button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" name="delete" id='delete' class="btn btn-danger  w-100" style="white-space: nowrap; font-size:0.9rem;">Delete</button>
                                         </div>
                                         <div class="col-3">
-                                            <button type='submit' name='print_payslip' class="btn btn-info  w-100 " style="white-space: nowrap; font-size:0.9rem;">Print Payslip</button>
-                                        </div>
-                                        <div class="col-2">
-                                            <button type="submit" name="cancel" class="btn btn-danger  w-100" style="white-space: nowrap; font-size:0.9rem;">Cancel</button>
-                                        </div>
-                                        <div class="col-2">
-                                            <button type="submit" name="close" class="btn btn-dark " style="white-space: nowrap; font-size:0.9rem; width:90%;">Close</button>
+                                            <button type="submit" name="close" class="btn btn-dark w-100" style="white-space: nowrap; font-size:0.9rem; width:90%;">Close</button>
                                         </div>
                                     </div>
                                 </li>
@@ -335,4 +336,12 @@
         </form>
     </div>
 </body>
-</html>
+<script>
+    $(document).ready(function() {
+        $(".clickable").click(function() {
+            let id = document.getElementById("employee_no").value 
+            window.location = "payroll_page.php?search=" + id
+        })
+    })
+</script>
+</html>+

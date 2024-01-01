@@ -1,15 +1,19 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fieldArray = [];
-    foreach($_POST as $key => $value){
+    foreach ($_POST as $key => $value) {
         $fieldArray[] = $value;
     }
     //echo json_encode($fieldArray);
-    $picpath = $fieldArray[24];
-    if(file_exists($picpath)){
+    $picpath = "";
+    if ($fieldArray[24]) {
+        $picpath = "../" . $fieldArray[24];
+    }
+
+    if (file_exists($picpath)) {
         $pic_filename = explode('temp/', $picpath)[1];
-        rename($picpath, 'uploads/' . $pic_filename);
-        $picpath = 'uploads/' .$pic_filename;
+        rename($picpath, '../uploads/' . $pic_filename);
+        $picpath = 'uploads/' . $pic_filename;
     }
 
     include 'db_connection.php';

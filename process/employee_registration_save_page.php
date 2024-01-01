@@ -1,3 +1,6 @@
+<?php
+    include 'employee_data_fill.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- EMPLOYEE REG FILE LINK-->
+    <!-- EMPLOYEE REG SAVE -->
     <script src="js/emp_data_save.js"></script>
 </head>
 <body>
@@ -24,7 +27,9 @@
                 <b>Doctor Jen's Employee Personal Information</b></h1>
                 <div class="a-form-group mt-3" style="float:left; clear:block; width:20%;" >
                     <div id="pic-box" style='width:170px; height:170px; overflow:hidden; margin-top:5px; margin-left:5px; 
-                        background:none; border:thin solid #d3d3d3'></div>
+                        background:none; border:thin solid #d3d3d3'>
+                        <img src="<?php echo isset($type) ? "$pic_path" : "uploads/profile.jpg"; ?>" style="width: 100%; height:100%" alt="" id='pic-img'>
+                    </div>
                     <input type="file" style="margin-top:10px; text-align:center;" id="uploadfile" name="uploadfile" value=""/>
                 </div>
             </form>
@@ -34,29 +39,29 @@
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="fname" class="mb-0 controllabel">First Name</label>
-                                <input type="text" class="form-control mt-0" name="fname" id="fname" value="">
+                                <input type="text" class="form-control mt-0" name="fname" id="fname" value="<?php echo $fname;?>">
                             </div>
                             <div class="form-group col-3">
                                 <label for="mname" class="mb-0">Middle Name</label>
-                                <input type="text" class="form-control mt-0" name="mname" id="mname">
+                                <input type="text" class="form-control mt-0" name="mname" id="mname" value="<?php echo $mname;?>">
                             </div>
                             <div class="form-group col">
                                 <label for="lname" class="mb-0 controllabel">Last Name</label>
-                                <input type="text" class="form-control mt-0" name="lname" id="lname" value="">
+                                <input type="text" class="form-control mt-0" name="lname" id="lname" value="<?php echo $lname;?>">
                             </div>
                             <div class="form-group col-2">
                                 <label for="suffix" class="mb-0">Suffix</label>
-                                <input type="text" class="form-control mt-0" name="suffix" id="suffix">
+                                <input type="text" class="form-control mt-0" name="suffix" id="suffix" value="<?php echo $suffix; ?>">
                             </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-4">
                             <label for="bday" class="mb-0 control-label">Date of Birth</label>
-                            <input type="date" class="form-control mt-0" name="birth_date" id="birth_date">
+                            <input type="date" class="form-control mt-0" name="birth_date" id="birth_date" value="<?php echo $birth_date;?>">
                         </div>
                         <div class="form-group col-3">
                             <label for="gender" class="mb-0 controllabel">Gender</label>
-                            <select class="form-control" name="gender" id="gender">
+                            <select class="form-control" name="gender" id="gender" value="<?php echo $gender;?>">
                                 <option value=''>-- select one --</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -64,7 +69,7 @@
                         </div>
                         <div class="form-group col">
                             <label for="nationality" class="mb-0 controllabel">Nationality</label>
-                            <select class="form-control mt-0" name="nationality" id="nationality">
+                            <select class="form-control mt-0" name="nationality" id="nationality" value="<?php echo $nationality;?>">
                                 <option value="">-- select one --</option>
                                 <option value="Afghan">Afghan</option>
                                 <option value="Albanian">Albanian</option>
@@ -262,12 +267,12 @@
                         </div>
                         <div class="form-group col-3">
                             <label for="civil_status" class="mb-0 controllabel">Civil Status</label>
-                            <select class="form-control" name="civil_status" id="civil_status">
+                            <select class="form-control" name="civil_status" id="civil_status" value="<?php echo $civil_status;?>">
                                 <option value=''>-- select one --</option>
-                                <option value="M">Married</option>
-                                <option value="S">Single</option>
-                                <option value="LS">Separated</option>
-                                <option value="W">Widow</option>
+                                <option value="Married">Married</option>
+                                <option value="Single">Single</option>
+                                <option value="Serparated">Separated</option>
+                                <option value="Widow">Widow</option>
                             </select>
                     </div>
                 </div>
@@ -276,16 +281,16 @@
                 <div class="form-row">
                     <div class="form-group col">
                         <label for="fname" class="mb-0 controllabel">Department</label>
-                        <input type="text" class="form-control mt-0" name="department" id="department" value="">
+                        <input type="text" class="form-control mt-0" name="department" id="department" value="<?php echo $department;?>">
                 </div>
                 <div class="form-group col-3">
                     <label for="mname" class="mb-0">Designation</label>
-                    <input type="text" class="form-control mt-0" name="designation" id="designation">
+                    <input type="text" class="form-control mt-0" name="designation" id="designation" value="<?php echo $designation; ?>">
                 </div>
                 <div class="form-group col-3">
                     <label for="qualified_dependent_status" class="mb-0
                     control-label">Qualified Dep. Status</label>
-                    <select class="form-control" name="qualified_dependent_status" id="qualified_dependent_status">
+                    <select class="form-control" name="qualified_dependent_status" id="qualified_dependent_status" value="<?php echo $qualified_dependent_status;?>">
                         <option value=''>-- select one --</option>
                         <option value="Z">Z or Single</option>
                         <option value="S or ME">S or ME</option>
@@ -299,16 +304,16 @@
                 <div class="form-row">
                 <div class="form-group col">
                     <label for="fname" class="mb-0 control-label">Employee Status</label>
-                    <input type="text" class="form-control mt-0" name="employee_status" id="employee_status" value="">
+                    <input type="text" class="form-control mt-0" name="employee_status" id="employee_status" value="<?php echo $employee_status;?>">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="pay_day" class="mb-0 controllabel">Paydate</label>
-                        <input type="date" class="form-control mt-0" name="pay_date" id="pay_date">
+                        <input type="date" class="form-control mt-0" name="pay_date" id="pay_date" value="<?php echo $pay_date;?>">
                     </div>
                     <div class="form-group col">
                         <label for="employee_number" class="mb-0 controllabel">Employee Number</label>
-                        <input type="text" class="form-control mt-0" name="employee_number" id="employee_number" value="">
+                        <input type="text" class="form-control mt-0" name="employee_number" id="employee_number" value="<?php echo $employee_no;?>">
                     </div>
                 </div>
                 </div>
@@ -319,17 +324,17 @@
                     <div class="form-row">
                     <div class="form-group col-5">
                         <label for="contact_number" class="mb-0 controllabel">Contact No.</label>
-                        <input type="text" class="form-control mt-0" name="contact_number" id="contact_number" value="">
+                        <input type="text" class="form-control mt-0" name="contact_number" id="contact_number" value="<?php echo $contact_no;?>">
                     </div>
                     <div class="form-group col">
                         <label for="email" class="mb-0 controllabel">Email</label>
-                        <input type="text" class="form-control mt-0" name="email_address" id="email_address" value="">
+                        <input type="text" class="form-control mt-0" name="email_address" id="email_address" value="<?php echo $email_address;?>">
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="form-group col-5">
                         <label for="social_media" class="mb-0 controllabel">Other (Social Media)</label>
-                        <select class="form-control" name="social_media" id="social_media">
+                        <select class="form-control" name="other_social_media_account" id="other_social_media_account" value="<?php echo $other_social_media_account;?>">
                             <option value=''>-- select one --</option>
                             <option value="facebook_messenger">Facebook Messenger</option>
                             <option value="whatsapp_messenger">WhatsApp Messenger</option>
@@ -341,7 +346,7 @@
                     </div>
                     <div class="form-group col">
                         <label for="social_media_account_id" class="mb-0 controllabel">Social Media Account ID/No.</label>
-                        <input type="text" class="form-control mt-0" name="social_media_account_id" id="social_media_account_id">
+                        <input type="text" class="form-control mt-0" name="social_media_account_id" id="social_media_account_id" value="<?php echo $social_media_account_id;?>">
                     </div>
                     </div>
                 </div>
@@ -352,29 +357,29 @@
                     <div class="form-row">
                     <div class="form-group col-12">
                         <label for="address1" class="mb-0">Address Line 1</label>
-                        <input type="text" class="form-control mt-0" +name="address_line1" id="address_line1">
+                        <input type="text" class="form-control mt-0" +name="address_line1" id="address_line1" value="<?php echo $address_line1;?>">
                 </div>
                 </div>
                 <div class="form-row">
                 <div class="form-group col-10">
                     <label for="address2" class="mb-0">Address Line 2</label>
-                    <input type="text" class="form-control mt-0" name="address_line2" id="address_line2">
+                    <input type="text" class="form-control mt-0" name="address_line2" id="address_line2" value="<?php echo $address_line2;?>">
                 </div>
                 </div>
                 <div class="form-row">
                 <div class="form-group col">
                     <label for="city" class="mb-0">City/Municipality</label>
-                    <input type="text" class="form-control mt-0" name="municipality" id="municipality">
+                    <input type="text" class="form-control mt-0" name="municipality" id="municipality" value="<?php echo $municipality;?>">
                 </div>
                 <div class="form-group col">
                     <label for="state" class="mb-0">State/Province</label>
-                    <input type="text" class="form-control mt-0" name="state_province" id="state_province">
+                    <input type="text" class="form-control mt-0" name="state_province" id="state_province" value="<?php echo $state_province;?>">
                 </div>
                 </div>
                 <div class="form-row">
                 <div class="form-group col-6">
                     <label for="country" class="mb-0">Country</label>
-                    <select class="form-control mt-0" name="country" id="country">
+                    <select class="form-control mt-0" name="country" id="country" value="<?php echo $country;?>">
                             <option value=''>-- select one --</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -624,20 +629,25 @@
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
                     </div>
-                    <div class="form-group col3">
-                        <label for="zip" class="mb-0">Zip Code</label>
-                        <input type="text" class="form-control mt-0" name="zip_code" id="zip_code">
+                        <div class="form-group col3">
+                            <label for="zip" class="mb-0">Zip Code</label>
+                            <input type="text" class="form-control mt-0" name="zip_code" id="zip_code" value="<?php echo $zip_code;?>">
+                        </div>
                     </div>
-                    </div>
-                    <div class="form-group col3">
-                        <label for="picpath" class="mb-0">Picture Path</label>
-                        <input type="text" class="form-control mt-0" name="picpath" id="picpath" value="" disabled>
-                    </div>
+                        <div class="form-group col3">
+                            <label for="picpath" class="mb-0">Picture Path</label>
+                            <input type="text" class="form-control mt-0" name="picpath" id="picpath" value="<?php echo $pic_path; ?>" disabled>
+                        </div>
                     </div>
                 </div>
                 </div>
-                <button type="submit" class="btn btn-primary" id="save" style="width:130px;">Save</button>
-                <button type="reset" class="btn btn-outline-secondary" id ="cancelbtn" name="cancelbtn" style="width:130px;">Cancel</button>
+                <button type="submit" class="btn btn-primary" id="<?php echo isset($type) ? "update" : "save"; ?>" name="save" style="width:130px;"><?php echo isset($type) ? "Update" : "Save"; ?></button>
+                    <?php
+                        if (isset($type)) {
+                            echo "<button type='submit' class='btn btn-danger' id='delete' name='delete' style='width:130px;'>Delete</button>";
+                        }
+                    ?>
+                <button type="reset" class="btn btn-outline-secondary" id ="cancel" name="cancel" style="width:130px;">Cancel</button>
             </form>
         </div>
     </div>
