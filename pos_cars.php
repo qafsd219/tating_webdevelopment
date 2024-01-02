@@ -134,7 +134,7 @@
                     <!-- COLUMN 1 -->
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="ItemName">Name of Item:</label>
+                            <label for="ItemName">Item Name</label>
                             <input type="text" class="form-control" id="ItemName" name="ItemName" style="background-color:#ccc" value='<?php echo $item_name ?>' readonly>
                         </div>
                         <div class="form-group">
@@ -208,7 +208,7 @@
                                 <button type="button" class="btn btn-warning w-100" id="save">Save</button>
                             </div>
                             <div class="col">
-                                <button type="button" class="btn btn-dark w-100">Update</button>
+                                <button type="button" class="btn btn-dark w-100" id="update">Update</button>
                             </div>
                         </div>
                         <!-- CALCULATOR -->
