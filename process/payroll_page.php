@@ -318,10 +318,8 @@
                                         <div class="col-3">
                                             <button type="submit" name="new" class="btn btn-warning w-100" style="white-space: nowrap; font-size:0.9rem;">New</button>
                                         </div>
-
                                         <div class="col-4">
-                                        <button type="submit" name='<?php echo !isset($isNew)  ? "update" : "save"; ?>' id='<?php echo !isset($isNew) ? "update" : "save"; ?>' class="btn btn-success  w-100 " style="white-space: nowrap; font-size:0.9rem;"><?php echo isset($isNew) ? "Update" : "Save"; ?></button>
-                                        </div>
+                                            <button type="submit" name='<?php echo !isset($isNew)  ? "update" : "save"; ?>' id='<?php echo !isset($isNew) ? "update" : "save"; ?>' class="btn btn-success  w-100 " style="white-space: nowrap; font-size:0.9rem;"><?php echo !isset($isNew) ? "Update" : "Save"; ?></button>                                        </div>
                                         <div class="col-4">
                                             <button type="submit" name="delete" id='delete' class="btn btn-danger  w-100" style="white-space: nowrap; font-size:0.9rem;">Delete</button>
                                         </div>
