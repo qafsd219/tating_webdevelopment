@@ -37,7 +37,7 @@ $gross_income = "";
 $net_income = "";
 $total_deduct = "";
 
-session_start();
+
 //getting input from textbox and place it inside the variable by calling the name of the inputs
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_GET['id'])) {
     // to press Calculate Gross Income button
