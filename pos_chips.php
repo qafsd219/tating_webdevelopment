@@ -66,6 +66,7 @@
                                 <li><a class="dropdown-item" href="pos_cars.php">Cars</a></li>
                                 <li><a class="dropdown-item" href="pos_chips.php">Chips</a></li>
                                 <li><a class="dropdown-item" href="pos_mouse.php">Mice</a></li>
+                                <li><a class="dropdown-item" href="pos_guns.php">Guns</a></li>
                             </ul>
                         </div>
                     </div>
