@@ -424,7 +424,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_GET['id'])) {
 
         // to press NEW button
     } else if (isset($_POST["new"])) {
-        header("Refresh:0; url=payroll_page.php");
+        header("Refresh:0; url=payroll.php");
     } else if (isset($_POST["close"])) {
         header("Refresh:0; url=admin.php");
     }
